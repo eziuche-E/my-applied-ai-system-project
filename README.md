@@ -25,28 +25,43 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
+- [] Describe the game's purpose.
+let you guess and then gives you hint on where to guess and then restarts when i say new game also keeps the score.
+
 - [ ] Detail which bugs you found.
+I found hint bug, guessing erro, imput erro out put erro, and restart button erro.
 - [ ] Explain what fixes you applied.
+I appled all of them and fixed all the bugs.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
+1. <!-- Describe this step --> type in a numer in rage of the difficulty 
 2. <!-- Describe this step -->
+then the hint tells you which direction to go if you get it your scored and if you run out of tries you loose points.
 3. <!-- Describe this step -->
+restart game after win or loose and keep plaiying and it keeps the score of your total game time.
 4. <!-- Describe this step -->
 5. <!-- Add more steps as needed -->
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
-
+========================== 12 passed in 2.34s ===========================
 ```
 # Paste your pytest output here, e.g.:
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
+ python -m pytest tests\test_game_logic.py
+========================== test session starts ==========================
+platform win32 -- Python 3.9.13, pytest-8.4.2, pluggy-1.6.0
+rootdir: C:\Users\ejima\Downloads\codepath\gameglitch\ai110-module1show-gameglitchinvestigator-starter
+collected 12 items                                                       
+
+tests\test_game_logic.py ............                              [100%]
+
+========================== 12 passed in 2.34s ===========================
 ```
 
 ## 🚀 Stretch Features

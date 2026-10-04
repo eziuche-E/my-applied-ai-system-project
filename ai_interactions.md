@@ -11,14 +11,16 @@
 **What task did you give the agent?**
 
 <!-- Describe the goal you asked the agent to accomplish -->
+fix this bugs in the area this is what i want the stremlin to do and i will give it what file and line to find it
 
 **What did the agent do?**
 
-<!-- List the steps the agent took (files edited, commands run, etc.) -->
+<!-- List the steps the agent took (files edited, commands run, etc.) --> it edith my app.py and my logc file too.
 
 **What did you have to verify or fix manually?**
 
 <!-- Describe anything the agent got wrong or that required human review -->
+the difficulty level had to be looked at twice as i found out it was incorrect.
 
 ---
 
