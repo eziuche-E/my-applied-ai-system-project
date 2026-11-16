@@ -1,0 +1,13 @@
+flowchart TD
+    A[Player selects difficulty] --> B[Streamlit app initializes game state]
+    B --> C[Player enters a guess]
+    C --> D[parse_guess validates numeric input]
+    D -->|Invalid| E[Display error without consuming attempt]
+    E --> C
+    D -->|Valid| F[Record attempt and guess history]
+    F --> G[check_guess compares guess with secret]
+    G --> H[update_score calculates score]
+    H --> I[Display hint and win or loss status]
+    I -->|Still playing| C
+    I --> J[New Game resets session state]
+    J --> B
