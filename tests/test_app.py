@@ -79,6 +79,18 @@ def test_suggestion_requires_human_submission():
     assert asdict(app.session_state["game"]) == before
 
 
+def test_stale_suggestion_cannot_be_applied_after_a_guess():
+    app = run_app()
+    app.session_state["game"] = Game(RoundConfig(1, 100, 3), 80)
+    app.run()
+    app.button(key="ask_strategy").click().run()
+    assert any(button.key == "use_suggestion" for button in app.button)
+    submit(app, "50")
+    assert not any(button.key == "use_suggestion" for button in app.button)
+    app.button(key="ask_strategy").click().run()
+    assert app.session_state["messages"][-1]["recommendation"] == 75
+
+
 def test_win_score_persists_across_rounds_without_double_counting():
     app = run_app()
     app.session_state["game"] = Game(RoundConfig(1, 100, 3), 50)

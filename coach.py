@@ -237,7 +237,9 @@ class Coach:
         else:
             sections.append(f"**Guarantee check:** {odds.guarantee_tries} tries are needed to guarantee a win for {n} candidates; only {t} remain. The plan improves your odds but cannot promise a win.")
         if intent == "rules":
-            sections.append("**Scoring and input rules**\n\n" + docs[0].text.split("\n\n")[2].replace("\n", " "))
+            paragraphs = docs[0].text.split("\n\n")
+            if len(paragraphs) > 2:
+                sections.append("**Scoring and input rules**\n\n" + paragraphs[2].replace("\n", " "))
         sections.append("**Retrieved reference**\n\n" + source)
         if len(docs) > 1:
             sections.append("**Related reference**\n\n" + retrieved_passage(docs[1]))

@@ -100,6 +100,15 @@ def test_corrupted_tool_results_are_rejected():
             verify_odds(public, broken)
 
 
+def test_agent_stops_when_a_math_tool_fails_verification(monkeypatch):
+    public = PublicGame(1, 100, 3)
+    broken = replace(calculate_odds(public), best_play=Fraction(1))
+    monkeypatch.setattr("coach.calculate_odds", lambda context: broken)
+    reply = Coach().answer("What are my odds?", public)
+    assert reply.status == "error" and reply.recommendation is None
+    assert "100.00%" not in reply.answer
+
+
 def test_retrieval_changes_the_actual_answer(tmp_path):
     custom = tmp_path / "probability.md"
     custom.write_text("# Custom probability reference\n\nUNIQUE RETRIEVED EXPLANATION.\n", encoding="utf-8")
