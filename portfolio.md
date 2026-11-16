@@ -22,11 +22,9 @@ This is a local symbolic agent with templated explanations. It does not call a l
 
 ## What this project says about me as an AI engineer
 
-**Draft for the student's review and personalization:**
+This project shows my ability to improve an existing program with AI assistance while keeping reliability and user understanding in mind. I extended my earlier guessing game into Guesswise, adding randomized rounds and a coach that retrieves information, explains probabilities, and recommends a strategy. The project demonstrates how retrieval, reasoning tools, guardrails, and automated tests can work together in one application. It reflects the kind of AI engineer I want to become: someone who builds useful systems, keeps people in control, and clearly explains what the technology can and cannot do.
 
-> This project represents the approach I want to bring to AI engineering: start with a clear user problem, make the system's assumptions visible, and verify its advice with reproducible evidence. By extending a familiar game into a probability coach, I can show how retrieval, modular reasoning tools, guardrails, and human control fit into one usable application. I want to build systems whose behavior people can inspect and question, and to be clear about the limits of both the technology and my own testing.
-
-Review this paragraph in your own voice and add a genuine observation from using the app before publishing it as a personal reflection. The implementation record and graded responsible-AI discussion are in [model_card.md](model_card.md).
+The implementation record and graded responsible-AI discussion are in [model_card.md](model_card.md).
 
 ## Explore the artifact
 

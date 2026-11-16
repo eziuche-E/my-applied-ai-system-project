@@ -353,7 +353,7 @@ Actual output excerpt (selected fields and tool events; full records are in [ass
 ## Presentation and portfolio
 
 - [presentation.md](presentation.md): a timed **6½-minute** presentation outline, speaker notes, end-to-end demo commands, and text-evidence fallback.
-- [portfolio.md](portfolio.md): the public GitHub link, a professional summary, engineering evidence, and a reflection paragraph marked for personal review.
+- [portfolio.md](portfolio.md): the public GitHub link, a professional summary, engineering evidence, and a short reflection on what this project shows about the student as an AI engineer.
 - [submission_checklist.md](submission_checklist.md): required artifacts, stretch evidence and limits, and the student's remaining submission actions.
 
 The student's Loom walkthrough is linked at the top of this README. Before submission, review the personal reflections and confirm the presentation meets the course's 5–7 minute requirement. Grading evidence remains the executable commands, inputs/outputs, tool events, and reliability results in this repository.

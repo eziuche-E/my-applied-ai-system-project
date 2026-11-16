@@ -17,7 +17,7 @@ This checklist records observable artifacts, not an awarded grade. Course review
 | At least 2–3 example inputs/outputs | Five fenced examples in README; full CLI output linked | Present. |
 | Multiple meaningful commits | Preparation, core system, evaluation harness, documentation/evidence | Preserved with original project history. |
 | Presentation | `presentation.md` with timed 6½-minute outline and demo commands; supplied Loom walkthrough | Recording link supplied; student should confirm the presentation meets course requirements. |
-| Portfolio artifact | `portfolio.md` with code link, summary, evidence, and reflection draft | Prepared; student must review the personal paragraph. |
+| Portfolio artifact | `portfolio.md` with code link, summary, evidence, and reflection paragraph | Present. |
 | Optional Loom video | [Student's walkthrough](https://www.loom.com/share/6277838cef04472d8da2146e19f6f8a7) | Linked in README and portfolio; video content and duration have not been reviewed by the assistant. |
 | Deadline and course submission | Not specified or performed in this repository | Student must confirm the deadline and submit through the course system. |
 
@@ -36,7 +36,7 @@ The project supplies evidence relevant to **three stretch categories, worth up t
 
 - [ ] Play the app and review the mathematics and limitations so you can explain them.
 - [ ] Personalize the marked observations and collaboration reflection in `model_card.md` without inventing experiences.
-- [ ] Review the portfolio paragraph in your own voice.
+- [x] Include a GitHub code link and short AI-engineering reflection in the portfolio artifact.
 - [ ] Confirm the recorded presentation meets the 5–7 minute requirement and is accessible to reviewers.
 - [x] Add the supplied Loom link to the README; text-based grading evidence remains available.
 - [ ] Confirm the repository remains public and final work is pushed before the actual course deadline.
