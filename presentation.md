@@ -158,4 +158,4 @@ Evaluation: 15/15 passed; 0 failed.
 
 ## Rehearsal and optional video
 
-Rehearse with a timer and trim spoken detail if the presentation exceeds seven minutes. A Loom walkthrough can focus on the app and the examples; installation and folder structure do not need to appear in the recording. No recording or presentation delivery has been completed by this guide. Add a real video link to the README only after recording one.
+The student supplied a [Loom walkthrough](https://www.loom.com/share/6277838cef04472d8da2146e19f6f8a7), now linked in the README and portfolio. This guide remains available for rehearsal or future presentations. A walkthrough can focus on the app and the examples; installation and folder structure do not need to appear in the recording. Confirm the final presentation meets the course's 5–7 minute requirement.

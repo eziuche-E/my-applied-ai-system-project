@@ -30,6 +30,7 @@ Review this paragraph in your own voice and add a genuine observation from using
 
 ## Explore the artifact
 
+- [Loom video walkthrough](https://www.loom.com/share/6277838cef04472d8da2146e19f6f8a7)
 - [Project README and sample input/output](README.md)
 - [Mermaid architecture source](diagrams/architecture.mmd)
 - [Full demonstration output](assets/evidence/demo-output.txt)

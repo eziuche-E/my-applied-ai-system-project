@@ -16,9 +16,9 @@ This checklist records observable artifacts, not an awarded grade. Course review
 | Reproducible evidence | `assets/evidence/*.txt`, `assets/evaluation.json`, browser check JSON | Committed actual outputs and tool results. |
 | At least 2–3 example inputs/outputs | Five fenced examples in README; full CLI output linked | Present. |
 | Multiple meaningful commits | Preparation, core system, evaluation harness, documentation/evidence | Preserved with original project history. |
-| Presentation | `presentation.md` with timed 6½-minute outline and demo commands | Guide prepared; rehearsal and delivery remain. |
+| Presentation | `presentation.md` with timed 6½-minute outline and demo commands; supplied Loom walkthrough | Recording link supplied; student should confirm the presentation meets course requirements. |
 | Portfolio artifact | `portfolio.md` with code link, summary, evidence, and reflection draft | Prepared; student must review the personal paragraph. |
-| Optional Loom video | No recording provided | Optional; add a real link only after recording. |
+| Optional Loom video | [Student's walkthrough](https://www.loom.com/share/6277838cef04472d8da2146e19f6f8a7) | Linked in README and portfolio; video content and duration have not been reviewed by the assistant. |
 | Deadline and course submission | Not specified or performed in this repository | Student must confirm the deadline and submit through the course system. |
 
 ## Optional stretch features: evidence and limits
@@ -37,7 +37,7 @@ The project supplies evidence relevant to **three stretch categories, worth up t
 - [ ] Play the app and review the mathematics and limitations so you can explain them.
 - [ ] Personalize the marked observations and collaboration reflection in `model_card.md` without inventing experiences.
 - [ ] Review the portfolio paragraph in your own voice.
-- [ ] Rehearse and deliver the 5–7 minute presentation.
-- [ ] If recording a Loom, add its actual link to the README; no video is required for text-based grading.
+- [ ] Confirm the recorded presentation meets the 5–7 minute requirement and is accessible to reviewers.
+- [x] Add the supplied Loom link to the README; text-based grading evidence remains available.
 - [ ] Confirm the repository remains public and final work is pushed before the actual course deadline.
 - [ ] Submit the public repository URL through the course's required submission process.

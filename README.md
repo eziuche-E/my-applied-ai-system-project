@@ -2,6 +2,10 @@
 
 A randomized number-guessing game with a coach beside it. Ask **“What is the probability I win before my tries run out?”**, **“What is the best strategy?”**, or **“What if I guess 1?”** The coach retrieves source notes, reads your public hint history, calculates exact odds, and explains a checked plan. It helps players learn probability and search strategies while playing.
 
+**Video walkthrough:** [Watch Guesswise on Loom](https://www.loom.com/share/6277838cef04472d8da2146e19f6f8a7).
+
+Reproducible commands, sample inputs/outputs, and reliability results are included below so the project can be assessed without watching the recording.
+
 ## Base project
 
 This extends **Game Glitch Investigator: The Impossible Guesser**, the Module 1 project at [eziuche-E/ai110-module1show-gameglitchinvestigator-starter](https://github.com/eziuche-E/ai110-module1show-gameglitchinvestigator-starter). The original Streamlit game supported fixed Easy/Normal/Hard ranges, higher/lower feedback, attempt tracking, round scoring, and restart controls; its tests covered game logic and state resets. Guesswise preserves that history in this dedicated repository and adds randomized round rules, a retrieval-and-planning coach, stricter guardrails, and a reproducible evaluation harness.
@@ -352,7 +356,7 @@ Actual output excerpt (selected fields and tool events; full records are in [ass
 - [portfolio.md](portfolio.md): the public GitHub link, a professional summary, engineering evidence, and a reflection paragraph marked for personal review.
 - [submission_checklist.md](submission_checklist.md): required artifacts, stretch evidence and limits, and the student's remaining submission actions.
 
-The student still needs to review the personal reflections, rehearse and deliver the presentation, and submit before the actual course deadline. A Loom walkthrough is optional; no video has been recorded or linked. Grading evidence remains the executable commands, inputs/outputs, tool events, and reliability results in this repository.
+The student's Loom walkthrough is linked at the top of this README. Before submission, review the personal reflections and confirm the presentation meets the course's 5–7 minute requirement. Grading evidence remains the executable commands, inputs/outputs, tool events, and reliability results in this repository.
 
 ## Reflection and next steps
 
