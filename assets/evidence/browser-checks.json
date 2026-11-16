@@ -1,0 +1,30 @@
+[
+  {
+    "check": "odds_answer",
+    "result": "PASS"
+  },
+  {
+    "check": "invalid_guess_guardrail",
+    "result": "PASS"
+  },
+  {
+    "check": "human_approval_suggestion_does_not_submit",
+    "result": "PASS"
+  },
+  {
+    "check": "guess_feedback_and_stale_suggestion",
+    "result": "PASS"
+  },
+  {
+    "check": "new_round_resets_history",
+    "result": "PASS"
+  },
+  {
+    "check": "typed_chat_what_if",
+    "result": "PASS"
+  },
+  {
+    "check": "mobile_no_horizontal_overflow",
+    "result": "PASS"
+  }
+]

@@ -1,13 +1,32 @@
 flowchart TD
-    A[Player selects difficulty] --> B[Streamlit app initializes game state]
-    B --> C[Player enters a guess]
-    C --> D[parse_guess validates numeric input]
-    D -->|Invalid| E[Display error without consuming attempt]
-    E --> C
-    D -->|Valid| F[Record attempt and guess history]
-    F --> G[check_guess compares guess with secret]
-    G --> H[update_score calculates score]
-    H --> I[Display hint and win or loss status]
-    I -->|Still playing| C
-    I --> J[New Game resets session state]
-    J --> B
+    Human[Player / human-in-the-loop] -->|New game| Random[Random round generator<br/>range + attempt limit + uniform secret]
+    Random --> Private[Private Game state<br/>secret stays inside game engine]
+    Human -->|Submit guess| Input[Whole-number / range / repeat guardrails]
+    Input -->|Rejected: no try consumed| UI[Streamlit game panel]
+    Input -->|Accepted| Engine[Compare with secret<br/>update attempts, score and outcome]
+    Private --> Engine
+    Engine --> History[Player-visible history<br/>guesses + truthful higher/lower feedback]
+    History --> UI
+    Engine -->|Reveal secret only after round ends| UI
+    Human -->|Question / quick action| Router[Coach input guardrail + intent router]
+    History --> Snapshot[PublicGame snapshot<br/>range, try limit, history, status<br/>NO secret field]
+    Private -->|Public fields only| Snapshot
+    Router -->|Supported question| Orchestrator[Local reasoning agent<br/>select tools and plan workflow]
+    Router -->|Unsupported / secret request| Refusal[Safe scoped response]
+    Snapshot --> Orchestrator
+    Orchestrator --> Retriever[Retriever<br/>intent routing + lexical ranking]
+    Notes[Local probability, strategy, rules documents] --> Retriever
+    Retriever --> Compose[Source-grounded response renderer]
+    Orchestrator --> Math[Exact Fraction calculations<br/>posterior interval + odds]
+    Math --> Planner[Midpoint plan<br/>what-if and feedback branches]
+    Planner --> Verify[Verify probability bounds, achievable coverage,<br/>recommendation, context and round status]
+    Verify -->|Pass| Compose
+    Verify -->|Fail| Safe[Fail closed: no invented odds]
+    Compose --> CoachUI[Coach panel<br/>explanation, citations and tool activity]
+    Refusal --> CoachUI
+    Safe --> CoachUI
+    CoachUI -->|Fill suggestion; never auto-submit| Human
+    Orchestrator --> Evidence[Bounded metadata logs<br/>public tool summaries / downloadable JSON]
+    Tests[pytest + Streamlit AppTest + evaluate.py<br/>independent enumeration and optimality checks] -->|Verification| Math
+    Tests -->|End-to-end validation| UI
+    Tests -->|End-to-end validation| CoachUI

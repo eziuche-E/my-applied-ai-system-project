@@ -1,0 +1,19 @@
+$ python evaluate.py --output assets/evaluation.json
+PASS opening: 100 candidates; 3 tries; next=1/100; best=7/100; recommendation=50
+PASS after-hints: 24 candidates; 3 tries; next=1/24; best=7/24; recommendation=62
+PASS last-try: 7 candidates; 1 tries; next=1/7; best=1/7; recommendation=19
+PASS what-if: Guess 1 then best play = 4%; optimal first move = 7%
+PASS guardrail: Secret request refused
+PASS empty_question: Expected blocked; got blocked
+PASS long_question: Expected blocked; got blocked
+PASS unsupported: Expected unsupported; got unsupported
+PASS contradictory_hints: Expected error; got error
+PASS won: Expected ok; got ok
+PASS lost: Expected ok; got ok
+PASS coverage_simulation: 1800 interval/try combinations; 180900 secret outcomes; 0 mismatches
+PASS optimality_crosscheck: 144 small-interval exhaustive move comparisons; 0 mismatches
+PASS what_if_simulation: Edge-first policy: 4/100 wins
+PASS context_adaptation: Static baseline: 1/3 feasible, 1/3 correct odds; coach: 3/3 feasible, 3/3 correct odds
+
+Evaluation: 15/15 passed; 0 failed.
+Report written to assets/evaluation.json
