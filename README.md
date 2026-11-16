@@ -285,6 +285,75 @@ ai_interactions.md           Development record and linked agent tool traces
 requirements-lock.txt        Tested dependency versions
 ```
 
+## Stretch features and submission evidence
+
+| Optional feature | Implementation and evidence |
+|---|---|
+| Custom / multi-source retrieval | Three custom notes in `knowledge/`; routed topic plus companion reference; actual source text contributes to explanations. See [retrieval impact](model_card.md#retrievals-contribution). |
+| Multi-step agent workflow | Public-state reading, retrieval, exact calculations, conditional planning, and verification. [ai_interactions.md](ai_interactions.md) links the committed intermediate tool results. |
+| Fine-tuning / model specialization | **Not claimed:** the coach has no trained model or few-shot model prompting. Its static-baseline comparison measures rule/template context adaptation. |
+| Evaluation harness | `python evaluate.py --output assets/evaluation.json` runs predefined questions and prints a pass/fail summary; committed results report 15/15 passed. |
+
+These artifacts provide evidence for three optional categories, potentially +6 points subject to reviewer interpretation. They do not establish all +8 points or a trained-model specialization result. The retrieval system uses local lexical lookup and templates; it does not claim neural RAG.
+
+The same agent used in the UI exposes reproducible AI-feature behavior through the CLI:
+
+```bash
+python demo.py --scenario after-hints --json
+```
+
+Actual output excerpt (selected fields and tool events; full records are in [assets/evaluation.json](assets/evaluation.json)):
+
+```json
+{
+  "question": "What is the best strategy?",
+  "status": "ok",
+  "intent": "strategy",
+  "recommendation": 62,
+  "sources": [
+    "knowledge/strategy.md",
+    "knowledge/probability.md"
+  ],
+  "trace": [
+    {
+      "tool": "retrieve",
+      "documents": [
+        "strategy",
+        "probability"
+      ],
+      "method": "intent routing plus companion-topic boost and lexical overlap"
+    },
+    {
+      "tool": "calculate_odds",
+      "candidates": 24,
+      "attempts_left": 3,
+      "next_guess": "1/24",
+      "best_play": "7/24",
+      "blind_play": "1/8"
+    },
+    {
+      "tool": "verify",
+      "result": "passed",
+      "checks": [
+        "public context",
+        "probability bounds",
+        "branch coverage",
+        "feasible midpoint",
+        "round status"
+      ]
+    }
+  ]
+}
+```
+
+## Presentation and portfolio
+
+- [presentation.md](presentation.md): a timed **6½-minute** presentation outline, speaker notes, end-to-end demo commands, and text-evidence fallback.
+- [portfolio.md](portfolio.md): the public GitHub link, a professional summary, engineering evidence, and a reflection paragraph marked for personal review.
+- [submission_checklist.md](submission_checklist.md): required artifacts, stretch evidence and limits, and the student's remaining submission actions.
+
+The student still needs to review the personal reflections, rehearse and deliver the presentation, and submit before the actual course deadline. A Loom walkthrough is optional; no video has been recorded or linked. Grading evidence remains the executable commands, inputs/outputs, tool events, and reliability results in this repository.
+
 ## Reflection and next steps
 
 The project demonstrates how retrieval, exact reasoning tools, verification, and human control can turn a small game into a probability-learning aid. [model_card.md](model_card.md) contains the graded reflection, observed limitations, collaboration record, and baseline comparison. Personal observations that require the student's own experience are explicitly identified there for review before submission.
