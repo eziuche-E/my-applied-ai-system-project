@@ -1,54 +1,37 @@
-def get_range_for_difficulty(difficulty: str):
-    """Return (low, high) inclusive range for a given difficulty."""
-    if difficulty == "Easy":
-        return 1, 20
-    if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
-        return 1, 200
-    return 1, 100
+"""Small, independently testable rules inherited from Game Glitch Investigator."""
+
+import re
 
 
-def parse_guess(raw: str):
-    """
-    Parse user input into an int guess.
+def get_range_for_difficulty(difficulty: str) -> tuple[int, int]:
+    """Legacy helper retained for the original project's callers."""
+    return {"Easy": (1, 20), "Normal": (1, 100), "Hard": (1, 200)}.get(
+        difficulty, (1, 100)
+    )
 
-    Returns: (ok: bool, guess_int: int | None, error_message: str | None)
-    """
-    if raw is None or raw.strip() == "":
+
+def parse_guess(raw: str | None) -> tuple[bool, int | None, str | None]:
+    if raw is None or (isinstance(raw, str) and not raw.strip()):
         return False, None, "Enter a guess."
+    if not isinstance(raw, str) or not re.fullmatch(r"[+-]?[0-9]+", raw.strip()):
+        return False, None, "Enter a whole number, such as 42."
+    if len(raw.strip()) > 20:
+        return False, None, "That number is too large."
+    return True, int(raw.strip()), None
 
-    try:
-        if "." in raw:
-            value = int(float(raw))
-        else:
-            value = int(raw)
-    except (TypeError, ValueError, OverflowError):
-        return False, None, "That is not a number."
 
-    return True, value, None
-
-def check_guess(guess, secret):
-    """
-    Compare guess to secret and return (outcome, message).
-
-    outcome examples: "Win", "Too High", "Too Low"
-    """
-    guess = int(guess)
-    secret = int(secret)
-
+def check_guess(guess: int, secret: int) -> tuple[str, str]:
+    guess, secret = int(guess), int(secret)
     if guess == secret:
-        return "Win", "🎉 Correct!"
+        return "Win", "Correct!"
     if guess > secret:
-        return "Too High", "📉 Go LOWER!"
-    return "Too Low", "📈 Go HIGHER!"
+        return "Too High", "Go LOWER!"
+    return "Too Low", "Go HIGHER!"
 
 
-def update_score(current_score: int, outcome: str, attempt_number: int):
-    """Update score based on outcome and attempt number."""
+def update_score(current_score: int, outcome: str, attempt_number: int) -> int:
     if outcome == "Win":
-        points = max(10, 100 - 10 * attempt_number)
-        return current_score + points
+        return current_score + max(10, 100 - 10 * attempt_number)
     if outcome in {"Too High", "Too Low"}:
         return current_score - 5
     return current_score
